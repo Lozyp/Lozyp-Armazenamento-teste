@@ -1,1 +1,70 @@
-python loxpt
+from datetime import datetime
+import random
+
+ativo = True
+while ativo:
+ iniciar = input("digite ajuda para ver códigos disponíveis e para desligar digite desligar:> ").lower().strip()
+  
+ if iniciar == "desligar":
+  ativo = False
+  print("【bot desligado】")
+   
+ elif iniciar == "ajuda":
+  print("【você pode usar vários códigos como👉 (oi) (/data) (piada) (jogo) (segredo)】")
+   
+ elif iniciar == "/data":
+   data = datetime.now()
+   data = data.strftime("%d:%m:%Y")
+   print(f"【é {data}】")
+   
+ elif iniciar == "oi":#saiba o nome do bot
+   print("【oi eu sou o bot loxpt:)】")
+   
+ elif iniciar == "piada":
+   #piada ruim
+   print("【você conhece a piada do pônei? não? pô nei eu】")
+
+ elif iniciar == "historia":
+   print("【era uma vez uma velha que um dia foi passear e encontrou um gato falante que falou: eu sou um gato falante. fim😐】")
+
+ elif iniciar == "segredo":
+   print("【eu já menti pra alguém🤫】")
+
+ elif iniciar == "secreto":
+   while True:
+     print("7927492047027469274")
+ elif iniciar == "jogo":
+   ativo = False
+
+   jogo = True
+   while jogo:
+     bot = random.randint(1,15)
+     jogo = False
+     print("【vamos jogar um jogo simples de adivinhação. pra fechar o jogo digite(fechar)】")
+     
+     jogando = True
+     while jogando:
+       jogador = input("escolha um número entre 1 a 15: ").lower().strip()
+
+       if jogador == "fechar":
+         jogando = False
+         print("【você saiu do jogo】")
+         ativo = True
+         
+       elif jogador.isdigit():
+        jogador = int(jogador)
+         
+        if jogador == bot:
+         print("Parabéns você ganhou🥳🥳🥳🥳🥳🥳")
+          
+         jogando = False
+         jogo = True
+          
+        elif jogador > bot:
+         print(f"é menor que {jogador}")
+          
+        elif jogador < bot:
+         print(f"é maior que {jogador}")
+          
+        else: print("【erro tente novamente】")
+ else: print("【erro de código tente novamente】")
